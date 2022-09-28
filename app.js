@@ -1,4 +1,4 @@
-const calcular = {
+const calculator = {
   sum: function (numA, numB) {
     console.log(numA + numB);
   },
@@ -19,3 +19,9 @@ const calcular = {
     console.log(numA ** numB)
   }
 }
+
+calculator.sum(24, 89);
+calculator.minus(43, 13);
+calculator.multiple(13, 25);
+calculator.divide(46,77);
+calculator.powerOf(3, 5);
