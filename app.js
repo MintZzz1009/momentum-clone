@@ -20,6 +20,8 @@ const calculator = {
   }
 }
 
+alert("Hello! This is Calculator Test!")
+
 calculator.sum(24, 89);
 calculator.minus(43, 13);
 calculator.multiple(13, 25);
