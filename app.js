@@ -56,11 +56,13 @@ function handleMouseEnter() {
   sayHello3.innerText = "Leave me by your pointer"
 }
 
-// sayHello3.addEventListener("click",whenYouClick);
-sayHello3.onclick = whenYouClick;
+sayHello3.addEventListener("click",whenYouClick);
+// sayHello3.onclick = whenYouClick;
 
-// sayHello3.addEventListener("mouseenter",handleMouseEnter);
-sayHello3.onmouseenter = handleMouseEnter;
+sayHello3.addEventListener("mouseenter",handleMouseEnter);
+// sayHello3.onmouseenter = handleMouseEnter;
 
-// sayHello3.addEventListener("mouseleave",handleMouseLeave);
-sayHello3.onmouseleave = handleMouseLeave;
+sayHello3.addEventListener("mouseleave",handleMouseLeave);
+// sayHello3.onmouseleave = handleMouseLeave;
+
+window.addEventListener("resize", handleWindowResize);
