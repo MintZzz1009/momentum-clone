@@ -26,3 +26,7 @@ console.log(title.id);
 
 console.log(title.className);
 // please
+
+const sayHello = document.querySelector(".hello h1");
+console.log(sayHello);
+sayHello.innerText = "Hello!!"
