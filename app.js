@@ -1,29 +1,28 @@
-const calculator = {
-  sum: function (numA, numB) {
-    console.log(numA + numB);
-  },
+// 주석은 console 입력시 출력 내용
 
-  minus: function(numA, numB) {
-    console.log(numA - numB);
-  },
+document.title;
+// 'Momentum App'
 
-  multiple: function(numA, numB) {
-    console.log(numA * numB);
-  },
+document.getElementById(title);
+//  null
 
-  divide: function(numA, numB) {
-    console.log(numA / numB)
-  },
+document.getElementById("title");
+// <h1 class="please" id="title">Please open your console (press F12) !!!!</h1>
 
-  powerOf: function(numA, numB) {
-    console.log(numA ** numB)
-  }
-}
+const newTitle = document.getElementById("title");  
+newTitle.innerText = "Modifying the title of Application"; 
 
-alert("Hello! This is Calculator Test!")
+document.getElementById("title");
+// <h1 class="please" id="title">Modifying the title of Application</h1>
 
-calculator.sum(24, 89);
-calculator.minus(43, 13);
-calculator.multiple(13, 25);
-calculator.divide(46,77);
-calculator.powerOf(3, 5);
+document.getElementsByClassName("please");
+// HTMLCollection [h1#title.please, title: h1#title.please]
+
+document.getElementsByTagName("h1");
+// HTMLCollection [h1#title.please, title: h1#title.please]
+
+console.log(title.id);
+// title
+
+console.log(title.className);
+// please
