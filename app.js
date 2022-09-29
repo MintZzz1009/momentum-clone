@@ -39,11 +39,28 @@ sayHello2.style.color = "tomato";
 const sayHello3 = document.querySelector("div.hello:nth-child(3) h1");    
 // last-child 는 왜 안되는것인지?? nth-child(3)으로 하면 된다.
 console.log(sayHello3);
+console.dir(sayHello3);
 sayHello3.innerText = "Please Click me!"
+
+
 
 function whenYouClick() {
   sayHello3.style.color = "purple";
 }
 
-sayHello3.addEventListener("click",whenYouClick);
+function handleMouseLeave() {
+  sayHello3.innerText = "Enter me by your pointer"
+}
 
+function handleMouseEnter() {
+  sayHello3.innerText = "Leave me by your pointer"
+}
+
+// sayHello3.addEventListener("click",whenYouClick);
+sayHello3.onclick = whenYouClick;
+
+// sayHello3.addEventListener("mouseenter",handleMouseEnter);
+sayHello3.onmouseenter = handleMouseEnter;
+
+// sayHello3.addEventListener("mouseleave",handleMouseLeave);
+sayHello3.onmouseleave = handleMouseLeave;
