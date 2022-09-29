@@ -69,4 +69,24 @@ function handleWindowResize() {
   document.body.style.backgroundColor = "wheat";
 }
 
+function handleWindowCopy() {
+  alert("It was copied")
+}
+
+function handleWindowPaste() {
+  alert("It was pasted")
+}
+
+function handleWifiOnline() {
+  alert("It's online")
+}
+
+function handleWifiOffline() {
+  alert("It's offline")
+}
+
 window.addEventListener("resize", handleWindowResize);
+window.addEventListener("copy", handleWindowCopy);
+window.addEventListener("paste", handleWindowPaste);
+window.addEventListener("online", handleWifiOnline);
+window.addEventListener("offline", handleWifiOffline);
