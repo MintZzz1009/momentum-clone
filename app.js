@@ -65,4 +65,8 @@ sayHello3.addEventListener("mouseenter",handleMouseEnter);
 sayHello3.addEventListener("mouseleave",handleMouseLeave);
 // sayHello3.onmouseleave = handleMouseLeave;
 
+function handleWindowResize() {
+  document.body.style.backgroundColor = "wheat";
+}
+
 window.addEventListener("resize", handleWindowResize);
