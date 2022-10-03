@@ -16,3 +16,5 @@ function handleBodyColor() {
     body.classList.add("medium-screen");
   }
 }
+
+window.addEventListener("resize", handleBodyColor);
