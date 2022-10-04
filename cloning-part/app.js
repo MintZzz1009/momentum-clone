@@ -24,6 +24,14 @@ function handleClickLoginFormButton (event) {
   }
   */
 }
+
+const link = document.querySelector("a");
+
+function handleClickLink(event) {
+  event.preventDefault();
+  console.log(event);
+}
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 //loginFormButton.addEventListener("click", handleClickLoginFormButton);
 loginForm.addEventListener("submit", handleClickLoginFormButton);
+link.addEventListener("click", handleClickLink);
