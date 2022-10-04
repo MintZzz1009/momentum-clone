@@ -11,7 +11,7 @@ const loginFormButton = document.getElementsByClassName("login-form__button")[0]
 // const loginFormButton = document.querySelector(".login-form__button");
 
 function handleClickLoginFormButton () {
-  console.log(loginFormInput.value);
+  console.log("Hello!", loginFormInput.value);
 }
 
 loginFormButton.addEventListener("click", handleClickLoginFormButton);
