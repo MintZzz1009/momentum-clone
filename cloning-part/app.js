@@ -10,8 +10,20 @@ const loginFormButton = document.getElementsByClassName("login-form__button")[0]
 // const loginFormInput = document.querySelector(".login-form__input");
 // const loginFormButton = document.querySelector(".login-form__button");
 
-function handleClickLoginFormButton () {
+function handleClickLoginFormButton (event) {
+  event.preventDefault();
+  console.log(loginFormInput.value);
+  /*
+  const username = loginFormInput.value;
+  if (username === "") {
+    alert("please write your name.");
+  } else if (username.length > 15) {
+    alert("Your name is too long.");
+  } else {
   console.log("Hello!", loginFormInput.value);
+  }
+  */
 }
-
-loginFormButton.addEventListener("click", handleClickLoginFormButton);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
+//loginFormButton.addEventListener("click", handleClickLoginFormButton);
+loginForm.addEventListener("submit", handleClickLoginFormButton);
