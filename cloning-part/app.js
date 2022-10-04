@@ -12,9 +12,8 @@ const loginFormButton = document.getElementsByClassName("login-form__button")[0]
 
 function handleClickLoginFormButton (event) {
   event.preventDefault();
-  console.log(loginFormInput.value);
-  /*
   const username = loginFormInput.value;
+  /*
   if (username === "") {
     alert("please write your name.");
   } else if (username.length > 15) {
@@ -23,6 +22,9 @@ function handleClickLoginFormButton (event) {
   console.log("Hello!", loginFormInput.value);
   }
   */
+  loginForm.classList.add("hidden");  
+  console.log(username);
+  console.log(loginForm.classList);
 }
 
 const link = document.querySelector("a");
@@ -30,6 +32,7 @@ const link = document.querySelector("a");
 function handleClickLink(event) {
   event.preventDefault();
   console.log(event);
+
 }
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
 //loginFormButton.addEventListener("click", handleClickLoginFormButton);
