@@ -1,0 +1,30 @@
+body {
+  background-color: powderblue;
+}
+h1 {
+  color: blue;
+}
+h2 {
+  color: red;
+}
+p {
+  color: green;
+}
+.cDotLine {
+  border-style: dotted;
+}
+.cGrooveLine {
+  border-style: groove;
+}
+.cInsetLine {
+  border-style: inset;
+}
+.cSigleLine {
+  border-style: dashed solid;
+}
+.cDoubleLine {
+  border-style: dashed double solid;
+}
+.cTextLeft {
+  text-align: left;
+}

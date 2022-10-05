@@ -7,12 +7,12 @@
     <title>Document</title>
   </head>
   <body>
-    <h1>Random Number Game</h1>
-    <h3>
-      Generate a number between 0 and
-      <input class="max-number" type="number" min="0" />
-    </h3>
     <form class="guess-form">
+      <h1>Random Number Game</h1>
+      <h3>
+        Generate a number between 0 and
+        <input class="max-number" type="number" min="0" required />
+      </h3>
       Guess the number:
       <input class="user-pick" type="number" min="0" required />
       <button>Play!</button>
@@ -20,6 +20,6 @@
 
     <span class="result-number"></span>
     <h4 class="win-or-lost"></h4>
-    <script src="app.js"
+    <script src="app.js"></script>
   </body>
 </html>
