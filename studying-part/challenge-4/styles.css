@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+}
+
+#timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: radial-gradient(rebeccapurple, black);
+  color: aliceblue;
+  border-radius: 130px;
+  border: 20px solid rgb(191, 127, 255);
+  margin-top: 100px;
+}
+
+.title {
+  padding: 100px;
+}
+
+.d-day-clock {
+  padding: 50px 100px 100px 100px;
+  font-size: 45px;
+}
