@@ -19,10 +19,11 @@ body {
 }
 
 .title {
-  padding: 100px;
+  padding: 95px 50px;
+  font-size: 35px;
 }
 
-.d-day-clock {
+.js-clock {
   padding: 50px 100px 100px 100px;
   font-size: 45px;
 }

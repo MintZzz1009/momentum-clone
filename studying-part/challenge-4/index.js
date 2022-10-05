@@ -10,14 +10,10 @@ interval 1초로 실행
 // 1995, 11, 17, 3, 24, 0
 
 const date = new Date();
-const christmasEve = new Date(2022, 11, 24, 0, 0, 0);
+const christmasEve = new Date(2022, 11, 25, 0, 0, 0);
 const afterTime = Number(christmasEve);
 
-const days = document.querySelector("#days");
-const hours = document.querySelector("#hours");
-const minutes = document.querySelector("#minutes");
-const seconds = document.querySelector("#seconds");
-
+const jsClock = document.querySelector(".js-clock");
 
 function handleRemainTime() {
 
@@ -38,10 +34,8 @@ function handleRemainTime() {
   const throwDaysHoursMinutes = throwDaysHours - (remainMinutes * 1000 * 60);
   const remainSeconds = String(Math.floor(throwDaysHoursMinutes / 1000)).padStart(2, "0");
 
-  days.innerHTML = remainDays;
-  hours.innerHTML = remainHours;
-  minutes.innerHTML = remainMinutes;
-  seconds.innerHTML = remainSeconds;
+  jsClock.innerHTML = `${remainDays}d ${remainHours}h ${remainMinutes}m ${remainSeconds}s`
+  
 }
 
 handleRemainTime();
