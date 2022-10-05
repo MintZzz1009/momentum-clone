@@ -7,8 +7,19 @@
     <title>Document</title>
   </head>
   <body>
-    <h1 href="https://nomadcoders.co/c/kokoa-challenge/lobby" color="blue">
-      김치
-    </h1>
+    <h1>Random Number Game</h1>
+    <h3>
+      Generate a number between 0 and
+      <input class="max-number" type="number" min="0" />
+    </h3>
+    <form class="guess-form">
+      Guess the number:
+      <input class="user-pick" type="number" min="0" required />
+      <button>Play!</button>
+    </form>
+
+    <span class="result-number"></span>
+    <h4 class="win-or-lost"></h4>
+    <script src="app.js"
   </body>
 </html>
