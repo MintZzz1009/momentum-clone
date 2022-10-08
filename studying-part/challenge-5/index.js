@@ -28,9 +28,8 @@ function handleDifferenceColor() {
   let secondColor = colors[Math.floor(Math.random()*colors.length)];
 
   if (firstColor === secondColor) {
-    secondColor = colors[Math.floor(Math.random()*colors.length)];
-  }
-  if (firstColor !== secondColor) {
+    handleDifferenceColor();
+  } else {
     return `linear-gradient(to right, ${firstColor}, ${secondColor})`;
   }
 }
