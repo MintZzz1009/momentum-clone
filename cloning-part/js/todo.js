@@ -3,20 +3,28 @@ const todoInput = todoForm.querySelector("input");
 const todoList = document.querySelector("ul#todo-list");
 
 function editTodo(event) {
-  const span = event.target.parentElement.querySelector("span");
-  span.classlist.add("hidden");
+  const li = event.target.parentElement;
+  const span = li.children[0];
+  // const span = event.target.parentElement.querySelector("span");
+  const btnEdit = li.children[1];
+  const btnDelete = li.children[2];
+  span.classList.add("hidden");
+  btnEdit.classList.add("hidden");
+  btnDelete.classList.add("hidden");
   
+
   const formToEdit = document.createElement("form");
-  const input = formToEdit.createElement("input");
-  const originText = span.text();
-  input.append(originText);
+  const input = document.createElement("input");
+  const originText = span.innerHTML;
+  input.value = originText;
   // input.innerText = originText;
-
-  const btnEdit = formToEdit.createElement("button");
-  btnEdit.innerText = "✅";
-  btnEdit.addEventListener("submit", submitNewTodo);
-
-  span.parentElement.appendChild(formToEdit)
+  const btnSubmit = document.createElement("button");
+  btnSubmit.innerText = "✅";
+  formToEdit.addEventListener("submit", submitNewTodo);
+  
+  formToEdit.appendChild(input);
+  formToEdit.appendChild(btnSubmit);
+  li.appendChild(formToEdit)
 
   function submitNewTodo() {
     event.preventDefault();
@@ -24,6 +32,8 @@ function editTodo(event) {
     formToEdit.remove()
     span.innerText = newText;
     span.classList.remove("hidden");
+    btnEdit.classList.remove("hidden");
+    btnDelete.classList.remove("hidden");
   }
 }
 
