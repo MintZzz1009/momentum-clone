@@ -2,6 +2,13 @@ const todoForm = document.querySelector("form#todo-form");
 const todoInput = todoForm.querySelector("input");
 const todoList = document.querySelector("ul#todo-list");
 
+const todoArray = [];
+const TODOS_KEY = "todos";
+
+function saveTodos() {
+  localStorage.setItem(TODOS_KEY, JSON.stringify(todoArray));
+}
+
 function editTodo(event) {
   const li = event.target.parentElement;
   const span = li.children[0];
@@ -65,9 +72,13 @@ function handleAddNewTodoList(event) {
   event.preventDefault();
   const newTodo = todoInput.value;
   todoInput.value = "";
+  todoArray.push(newTodo);
+  saveTodos();
 
   handleAddNewItem(newTodo);
 }
 
 
 todoForm.addEventListener("submit", handleAddNewTodoList);
+
+const savedTodos = lacalstorage.getItem(TODOS_KEY);
