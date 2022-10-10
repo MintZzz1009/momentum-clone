@@ -2,7 +2,7 @@ const todoForm = document.querySelector("form#todo-form");
 const todoInput = todoForm.querySelector("input");
 const todoList = document.querySelector("ul#todo-list");
 
-const todoArray = [];
+let todoArray = [];
 const TODOS_KEY = "todos";
 
 function saveTodos() {
@@ -33,7 +33,7 @@ function editTodo(event) {
   formToEdit.appendChild(btnSubmit);
   li.appendChild(formToEdit)
 
-  function submitNewTodo() {
+  function submitNewTodo(event) {
     event.preventDefault();
     const newText = input.value
     formToEdit.remove()
@@ -41,21 +41,28 @@ function editTodo(event) {
     span.classList.remove("hidden");
     btnEdit.classList.remove("hidden");
     btnDelete.classList.remove("hidden");
+    
+    const newTextObj = todoArray.find(newTodoObj => newTodoObj.id === parseInt(li.id));
+    newTextObj.text = newText;
+    saveTodos();
   }
 }
 
 function deleteTodo(event) {
   const li = event.target.parentElement;
   li.remove();
+  todoArray = todoArray.filter((todo) => todo.id !== parseInt(li.id))
+  saveTodos();  
 }
 
-function handleAddNewItem(newTodo) {
+function handlePaintTodo(newTodoObj) {
   const todoList_li = document.createElement("li");
+  todoList_li.id = newTodoObj.id;
   const span = document.createElement("span");
   const btnDelete = document.createElement("button");
   const btnEdit = document.createElement("button");
 
-  span.innerText = newTodo;
+  span.innerText = newTodoObj.text;
   btnEdit.innerText = "✏️";
   btnEdit.addEventListener("click", editTodo);
  
@@ -68,17 +75,28 @@ function handleAddNewItem(newTodo) {
   todoList.appendChild(todoList_li);
 }
 
+
 function handleAddNewTodoList(event) {
   event.preventDefault();
   const newTodo = todoInput.value;
   todoInput.value = "";
-  todoArray.push(newTodo);
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(),
+  }
+  todoArray.push(newTodoObj);
   saveTodos();
 
-  handleAddNewItem(newTodo);
+  handlePaintTodo(newTodoObj);
 }
 
 
 todoForm.addEventListener("submit", handleAddNewTodoList);
 
-const savedTodos = lacalstorage.getItem(TODOS_KEY);
+const savedTodos = localStorage.getItem(TODOS_KEY);
+
+if (savedTodos) {       // if (savedTodos !== null)
+  const parsedTodos = JSON.parse(savedTodos);
+  todoArray = parsedTodos;
+  parsedTodos.forEach(handlePaintTodo);
+}
