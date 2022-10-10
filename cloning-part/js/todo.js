@@ -5,6 +5,8 @@ const todoList = document.querySelector("ul#todo-list");
 let todoArray = [];
 const TODOS_KEY = "todos";
 
+const CLASS_HIDDEN = "hidden";
+
 function saveTodos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(todoArray));
 }
@@ -12,14 +14,12 @@ function saveTodos() {
 function editTodo(event) {
   const li = event.target.parentElement;
   const span = li.children[0];
-  // const span = event.target.parentElement.querySelector("span");
   const btnEdit = li.children[1];
   const btnDelete = li.children[2];
-  span.classList.add("hidden");
-  btnEdit.classList.add("hidden");
-  btnDelete.classList.add("hidden");
+  span.classList.add(CLASS_HIDDEN);
+  btnEdit.classList.add(CLASS_HIDDEN);
+  btnDelete.classList.add(CLASS_HIDDEN);
   
-
   const formToEdit = document.createElement("form");
   const input = document.createElement("input");
   const originText = span.innerHTML;
@@ -27,23 +27,23 @@ function editTodo(event) {
   // input.innerText = originText;
   const btnSubmit = document.createElement("button");
   btnSubmit.innerText = "✅";
-  formToEdit.addEventListener("submit", submitNewTodo);
+  formToEdit.addEventListener("submit", submitEditedTodo);
   
   formToEdit.appendChild(input);
   formToEdit.appendChild(btnSubmit);
   li.appendChild(formToEdit)
 
-  function submitNewTodo(event) {
+  function submitEditedTodo(event) {
     event.preventDefault();
-    const newText = input.value
+    const editedTodo = input.value
     formToEdit.remove()
-    span.innerText = newText;
-    span.classList.remove("hidden");
-    btnEdit.classList.remove("hidden");
-    btnDelete.classList.remove("hidden");
+    span.innerText = editedTodo;
+    span.classList.remove(CLASS_HIDDEN);
+    btnEdit.classList.remove(CLASS_HIDDEN);
+    btnDelete.classList.remove(CLASS_HIDDEN);
     
-    const newTextObj = todoArray.find(newTodoObj => newTodoObj.id === parseInt(li.id));
-    newTextObj.text = newText;
+    const editedTodoObj = todoArray.find(newTodoObj => newTodoObj.id === parseInt(li.id));
+    editedTodoObj.text = newText;
     saveTodos();
   }
 }
@@ -56,8 +56,8 @@ function deleteTodo(event) {
 }
 
 function handlePaintTodo(newTodoObj) {
-  const todoList_li = document.createElement("li");
-  todoList_li.id = newTodoObj.id;
+  const li = document.createElement("li");
+  li.id = newTodoObj.id;
   const span = document.createElement("span");
   const btnDelete = document.createElement("button");
   const btnEdit = document.createElement("button");
@@ -69,12 +69,11 @@ function handlePaintTodo(newTodoObj) {
   btnDelete.innerText = "❌";
   btnDelete.addEventListener("click", deleteTodo);
 
-  todoList_li.appendChild(span);
-  todoList_li.appendChild(btnEdit);
-  todoList_li.appendChild(btnDelete);
-  todoList.appendChild(todoList_li);
+  li.appendChild(span);
+  li.appendChild(btnEdit);
+  li.appendChild(btnDelete);
+  todoList.appendChild(li);
 }
-
 
 function handleAddNewTodoList(event) {
   event.preventDefault();
