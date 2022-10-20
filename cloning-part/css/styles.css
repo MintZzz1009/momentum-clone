@@ -1,3 +1,35 @@
+/* font */
+@import url("https://fonts.googleapis.com/css2?family=Bungee+Spice&family=Fredoka+One&family=Hi+Melody&family=Kalam:wght@300;400;700&family=Mitr:wght@200;300;400;500;600;700&family=Montserrat:wght@400;600;700;800&family=Open+Sans:wght@400;600;700&display=swap");
+
+/* styles */
+@import "reset.css";
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Hi Melody", cursive;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 .hidden {
   display: none;
+}
+
+#clock {
+  display: block;
+  width: 600px;
+  height: 250px;
+  padding: 20px 40px;
+  font-size: 200px;
+  color: white;
+  text-align: center;
+  line-height: 290px;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
