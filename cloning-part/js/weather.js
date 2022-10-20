@@ -9,8 +9,8 @@ function onGeoOK(position) {
   .then(data => { 
   const cityName = document.querySelector("#weather span:first-child");
   const currentWeather = document.querySelector("#weather span:last-child")
-  cityName.innerText = data.name;
-  currentWeather.innerText =data.weather[0].main;
+  cityName.innerText = `지역: ${data.name}`;
+  currentWeather.innerText =`날씨: ${data.weather[0].main} / 현재온도: ${data.main.temp}℃ (최고: ${data.main.temp_max}℃, 최저: ${data.main.temp_min}℃)`;
   })
 }
 
