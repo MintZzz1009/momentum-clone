@@ -25,11 +25,25 @@ body {
   display: block;
   width: 600px;
   height: 250px;
-  padding: 20px 40px;
+  padding: 20px 50px;
+  margin-bottom: 30px;
   font-size: 200px;
+  font-weight: bold;
   color: white;
   text-align: center;
   line-height: 290px;
+  border-radius: 50px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+#weather {
+  display: flex;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  font-size: 30px;
+  color: white;
+  text-align: center;
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.5);
 }

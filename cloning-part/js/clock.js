@@ -19,8 +19,14 @@ function getClock() {
   const date = new Date();
   const hours = String(date.getHours()).padStart(2, "0");
   const minutes = String(date.getMinutes()).padStart(2, "0");
-  const seconds = String(date.getSeconds()).padStart(2, "0");
-  clock.innerText = `${hours}:${minutes}:${seconds}`
+  //const seconds = String(date.getSeconds()).padStart(2, "0");
+  if (hours < 12) {
+    const meridiem = "am";
+    clock.innerText = `${hours}:${minutes} ${meridiem}`;
+  } else {
+    const meridiem = "pm";
+    clock.innerText = `${hours}:${minutes} ${meridiem}`;
+  }
 }
 
 getClock();
