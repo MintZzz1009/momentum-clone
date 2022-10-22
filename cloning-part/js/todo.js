@@ -58,10 +58,12 @@ function deleteTodo(event) {
 function handlePaintTodo(newTodoObj) {
   const li = document.createElement("li");
   li.id = newTodoObj.id;
+  const input = document.createElement("input");
   const span = document.createElement("span");
   const btnDelete = document.createElement("button");
   const btnEdit = document.createElement("button");
 
+  input.type = "checkbox";
   span.innerText = newTodoObj.text;
   btnEdit.innerText = "✏️";
   btnEdit.addEventListener("click", editTodo);
@@ -69,6 +71,7 @@ function handlePaintTodo(newTodoObj) {
   btnDelete.innerText = "❌";
   btnDelete.addEventListener("click", deleteTodo);
 
+  li.appendChild(input);
   li.appendChild(span);
   li.appendChild(btnEdit);
   li.appendChild(btnDelete);
