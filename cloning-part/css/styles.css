@@ -38,12 +38,18 @@ body {
 
 #weather {
   display: flex;
+  flex-direction: column;
   position: absolute;
   top: 0px;
   right: 0px;
   font-size: 30px;
   color: white;
-  text-align: center;
+  text-align: left;
+  padding: 20px 40px;
+  margin: 5px;
   border-radius: 50px;
   background-color: rgba(0, 0, 0, 0.5);
 }
+
+
+.login-form
