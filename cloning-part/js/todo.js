@@ -4,7 +4,6 @@ const todoList = document.querySelector("ul#todo-list");
 
 let todoArray = [];
 const TODOS_KEY = "todos";
-
 const CLASS_HIDDEN = "hidden";
 
 function saveTodos() {
@@ -13,9 +12,9 @@ function saveTodos() {
 
 function editTodo(event) {
   const li = event.target.parentElement;
-  const span = li.children[0];
-  const btnEdit = li.children[1];
-  const btnDelete = li.children[2];
+  const span = li.children[1];
+  const btnEdit = li.children[2];
+  const btnDelete = li.children[3];
   span.classList.add(CLASS_HIDDEN);
   btnEdit.classList.add(CLASS_HIDDEN);
   btnDelete.classList.add(CLASS_HIDDEN);

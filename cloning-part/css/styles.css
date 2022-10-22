@@ -22,7 +22,7 @@ input {
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 #clock {
@@ -105,9 +105,13 @@ input {
 }
 
 #todo {
+  position: absolute;
+  bottom: 70px;
+  right: 30px;
   color: white;
-  background-color: #444;
   padding: 20px;
+  border-radius: 20px;
+  background-color: #444;
 }
 
 #todo-form {
@@ -131,10 +135,12 @@ input {
 }
 
 #todo-list::-webkit-scrollbar {
-  width: 10px;
+  width: 5px;
 }
 #todo-list::-webkit-scrollbar-thumb {
-  color: #777;
+  background-color: #777;
+  height: 20px;
+  border-radius: 3px;
 }
 #todo-list::-webkit-scrollbar-track {
   color: white;
@@ -150,7 +156,7 @@ input {
 #todo-list > li input {
   width: 20px;
   height: 20px;
-  margin-right: 15px;
+  margin: 5px 15px 5px 0px;
 }
 
 #todo-list > li span {
@@ -180,4 +186,21 @@ input {
 #todo-list > li button:hover {
   color: rgb(0, 0, 0, 1);
   background-color: rgba(255, 255, 255, 0.3);
+}
+
+#todo-list > li > form {
+  display: flex;
+  line-height: 30px;
+}
+
+#todo-list > li > form input {
+  width: 250px;
+  height: 30px;
+  font-family: "Hi Melody", cursive;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0px 0px;
+  margin: 0px 20px 0px 0px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
 }
