@@ -106,12 +106,13 @@ input {
 
 #todo {
   position: absolute;
-  bottom: 70px;
-  right: 30px;
+  bottom: 100px;
+  right: 20px;
   color: white;
   padding: 20px;
   border-radius: 20px;
-  background-color: #444;
+  background-color: rgba(0, 0, 0, 0.8);
+  box-shadow: 1px 1px 10px black;
 }
 
 #todo-form {
@@ -130,7 +131,7 @@ input {
 
 #todo-list {
   min-height: auto;
-  max-height: 500px;
+  max-height: 400px;
   overflow-y: scroll;
 }
 
@@ -163,6 +164,11 @@ input {
   flex-wrap: wrap;
   width: 214px;
   margin-right: 20px;
+}
+
+#todo-list > li input:checked + span {
+  text-decoration: line-through;
+  opacity: 0.5;
 }
 
 #todo-list > li button {
@@ -203,4 +209,47 @@ input {
   margin: 0px 20px 0px 0px;
   border: none;
   background-color: rgba(0, 0, 0, 0);
+}
+
+#quote {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 3px black;
+}
+
+#quote span {
+  padding: 3px;
+}
+
+#quote span:first-child {
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+}
+
+#quote span:last-child {
+  font-size: 20px;
+  font-weight: thin;
+  color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+#quote:hover span:first-child {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+#quote:hover span:last-child {
+  opacity: 1;
+  transform: translateY(0px);
 }
