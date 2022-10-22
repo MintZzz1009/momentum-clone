@@ -27,9 +27,9 @@ input {
 
 #clock {
   display: block;
-  width: 600px;
+  width: 650px;
   height: 250px;
-  padding: 20px 50px;
+  padding: 20px 40px;
   margin-bottom: 30px;
   font-size: 200px;
   font-weight: bold;
@@ -56,20 +56,19 @@ input {
 }
 
 .login-form {
-  width: 100vw;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
   font-size: 50px;
   color: white;
+  text-shadow: 2px 2px 5px black;
+  margin-bottom: 50px;
 }
 
 .login-form__input {
   width: 250px;
+  height: 60px;
   font-family: "Hi Melody", cursive;
   font-size: 50px;
   color: white;
-  margin: 0px 10px;
+  margin-left: 10px;
   border: none;
   border-bottom: 2px solid white;
   background-color: rgba(255, 255, 255, 0);
@@ -79,20 +78,50 @@ input {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  font-size: 25px;
+  width: 60px;
+  height: 60px;
+  margin-left: -10px;
+  font-size: 30px;
   color: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   transition: all 0.3s ease-in-out;
-  visibility: hidden;
+  opacity: 0;
 }
 
-.login-form:focus-within .login-form__button {
-  visibility: visible;
+.login-form:hover .login-form__button {
+  opacity: 1;
 }
 
 .login-form__button:hover {
   color: rgba(255, 255, 255, 1);
-  background-color: rgba(255, 255, 255, 0.5);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.greeting {
+  font-size: 50px;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  margin-bottom: 50px;
+}
+
+#todo {
+  font-size: 30px;
+  color: white;
+  background-color: #444;
+}
+
+#todo-form {
+  padding: 20px 40px;
+}
+
+#todo-form input {
+  font-family: "Hi Melody", cursive;
+  font-size: 30px;
+  color: white;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+#todo-list {
 }

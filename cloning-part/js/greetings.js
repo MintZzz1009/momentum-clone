@@ -35,7 +35,7 @@ function handleClickLoginFormButton (event) {
 }
 
 function paintGreetings(username) {
-  greeting.innerText = `Hello! ${username}`;
+  greeting.innerText = `Hello! ${username}~`;
   greeting.classList.remove(HIDDEN_CLASSNAME);
 }
 
@@ -45,6 +45,7 @@ if (savedUsername === null) {
   // show the form 
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   loginForm.addEventListener("submit", handleClickLoginFormButton);
+  loginFormButton.addEventListener("click", handleClickLoginFormButton);
 } else {
   // show the greetings
   paintGreetings(savedUsername); 
