@@ -17,6 +17,10 @@ body {
   background-repeat: no-repeat;
 }
 
+input {
+  outline: none;
+}
+
 .hidden {
   display: none;
 }
@@ -51,5 +55,44 @@ body {
   background-color: rgba(0, 0, 0, 0.5);
 }
 
+.login-form {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  font-size: 50px;
+  color: white;
+}
 
-.login-form
+.login-form__input {
+  width: 250px;
+  font-family: "Hi Melody", cursive;
+  font-size: 50px;
+  color: white;
+  margin: 0px 10px;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.login-form__button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  visibility: hidden;
+}
+
+.login-form:focus-within .login-form__button {
+  visibility: visible;
+}
+
+.login-form__button:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.5);
+}
