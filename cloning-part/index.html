@@ -10,13 +10,22 @@
   <body>
     <h2 id="clock">00:00</h2>
     <h2 id="weather">
-      <i class="fa-solid fa-location-dot"></i><span></span>
-      <span></span>
-      <span></span><button>🔽</button>
-      <ul id="temp-list" class="hidden">
-        <li></li>
-        <li></li>
-      </ul>
+      <span><img id="weather-icon" src="" /></span>
+      <div class="weather-column">
+        <span><i class="fa-solid fa-location-dot fa-fw"></i></span>
+        <div class="weather__temps">
+          <span class="weather__current-temp">
+            <i class="fa-solid fa-temperature-three-quarters fa-fw"></i>
+            <button class="weather__current-temp__button">
+              <i class="fa-solid fa-caret-up fa-fw"></i>
+            </button>
+          </span>
+          <ul id="temp-list" class="">
+            <li><i class="fa-solid fa-temperature-arrow-up fa-fw"></i></li>
+            <li><i class="fa-solid fa-temperature-arrow-down fa-fw"></i></li>
+          </ul>
+        </div>
+      </div>
     </h2>
     <form class="login-form hidden">
       <label for="login-form__input">What is your name?</label>

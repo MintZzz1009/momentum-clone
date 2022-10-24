@@ -7,16 +7,20 @@ function onGeoOK(position) {
   fetch(url)
   .then(response => response.json())
   .then(data => { 
-  const cityName = document.querySelector("#weather span:nth-child(2)");
-  const currentWeather = document.querySelector("#weather span:nth-child(3)");
-  const currentTemp = document.querySelector("#weather span:nth-child(4)");
-  const listItemTemp = document.querySelectorAll("#temp-list li");
+    const weatherIcon = document.querySelector("#weather-icon");
+    const currentWeather = document.querySelector("#weather span:first-child");
+    const cityName = document.querySelector(".weather-column > span");
+    console.log(weatherIcon);
+    const currentTemp = document.querySelector(".weather__current-temp i");
+    const listItemTemp = document.querySelectorAll("#temp-list li");
 
-  cityName.innerText = `지역: ${data.name}`;
-  currentWeather.innerText =`날씨: ${data.weather[0].main}`;
-  currentTemp.innerText = `현재: ${data.main.temp}°`;
-  listItemTemp[0].innerText = `최고: ${data.main.temp_max}°`; 
-  listItemTemp[1].innerText = `최저: ${data.main.temp_min}°`;
+    weatherIcon.src =`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    currentWeather.append(data.weather[0].main);
+    cityName.append(data.name);
+    console.log(weatherIcon.src);
+    currentTemp.after(`${Math.round(data.main.temp)}°`);
+    listItemTemp[0].append(`${Math.round(data.main.temp_max)}°`);
+    listItemTemp[1].append(`${Math.round(data.main.temp_min)}°`);
   })
 }
 
@@ -26,15 +30,15 @@ function onGeoError() {
 
 function handleTempList() {
   const listTemp = document.querySelector("#temp-list");
-  if (listTemp.classList.toggle("hidden")) {
-    tempListButton.innerText = "🔽";  
+  if (listTemp.classList.toggle("slide")) {
+    tempListButton.innerHTML = '<i class="fa-solid fa-caret-down fa-fw"></i>';
   } else {
-  tempListButton.innerText = "🔼";
+    tempListButton.innerHTML = '<i class="fa-solid fa-caret-up fa-fw"></i>';
   }
 }
 
 navigator.geolocation.getCurrentPosition(onGeoOK,onGeoError);
 
-const tempListButton = document.querySelector("#weather > button");
+const tempListButton = document.querySelector(".weather__current-temp > button");
 tempListButton.addEventListener("click", handleTempList);
 
