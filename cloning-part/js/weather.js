@@ -7,20 +7,20 @@ function onGeoOK(position) {
   fetch(url)
   .then(response => response.json())
   .then(data => { 
-    const weatherIcon = document.querySelector("#weather-icon");
-    const currentWeather = document.querySelector("#weather span:first-child");
-    const cityName = document.querySelector(".weather-column > span");
-    console.log(weatherIcon);
-    const currentTemp = document.querySelector(".weather__current-temp");
-    const listItemTemp = document.querySelectorAll("#temp-list li");
+    const weatherIcon = document.querySelector(".weather-icon");
+    const currentWeather = document.querySelector(".weather__column > span");
+    const cityName = document.querySelector(".weather__location > span");
+    console.log(currentWeather);
+    const currentTemp = document.querySelector(".weather__current-temp > span");
+    const listItemTemp = document.querySelectorAll(".temp-list span");
 
     weatherIcon.src =`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
-    currentWeather.append(data.weather[0].main);
-    cityName.append(data.name);
+    currentWeather.innerText = `${data.weather[0].main}`;
+    cityName.innerText = `${data.name}`;
     console.log(weatherIcon.src);
-    currentTemp.prepend(`${Math.round(data.main.temp)}°`);
-    listItemTemp[0].append(`${Math.round(data.main.temp_max)}°`);
-    listItemTemp[1].append(`${Math.round(data.main.temp_min)}°`);
+    currentTemp.innerText = `${Math.round(data.main.temp)}°`;
+    listItemTemp[0].innerText = `${Math.round(data.main.temp_max)}°`;
+    listItemTemp[1].innerText = `${Math.round(data.main.temp_min)}°`;
   })
 }
 
@@ -29,7 +29,7 @@ function onGeoError() {
 }
 
 function handleTempList() {
-  const listTemp = document.querySelector("#temp-list");
+  const listTemp = document.querySelector(".temp-list");
   if (listTemp.classList.toggle("slide")) {
     tempListButton.innerHTML = '<i class="fa-solid fa-caret-down"></i>';
   } else {
@@ -39,6 +39,6 @@ function handleTempList() {
 
 navigator.geolocation.getCurrentPosition(onGeoOK,onGeoError);
 
-const tempListButton = document.querySelector(".weather__current-temp > button");
+const tempListButton = document.querySelector(".weather__current-temp__button");
 tempListButton.addEventListener("click", handleTempList);
 
