@@ -11,14 +11,14 @@ function onGeoOK(position) {
     const currentWeather = document.querySelector("#weather span:first-child");
     const cityName = document.querySelector(".weather-column > span");
     console.log(weatherIcon);
-    const currentTemp = document.querySelector(".weather__current-temp i");
+    const currentTemp = document.querySelector(".weather__current-temp");
     const listItemTemp = document.querySelectorAll("#temp-list li");
 
     weatherIcon.src =`http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     currentWeather.append(data.weather[0].main);
     cityName.append(data.name);
     console.log(weatherIcon.src);
-    currentTemp.after(`${Math.round(data.main.temp)}°`);
+    currentTemp.prepend(`${Math.round(data.main.temp)}°`);
     listItemTemp[0].append(`${Math.round(data.main.temp_max)}°`);
     listItemTemp[1].append(`${Math.round(data.main.temp_min)}°`);
   })
@@ -31,9 +31,9 @@ function onGeoError() {
 function handleTempList() {
   const listTemp = document.querySelector("#temp-list");
   if (listTemp.classList.toggle("slide")) {
-    tempListButton.innerHTML = '<i class="fa-solid fa-caret-down fa-fw"></i>';
+    tempListButton.innerHTML = '<i class="fa-solid fa-caret-down"></i>';
   } else {
-    tempListButton.innerHTML = '<i class="fa-solid fa-caret-up fa-fw"></i>';
+    tempListButton.innerHTML = '<i class="fa-solid fa-caret-up"></i>';
   }
 }
 
