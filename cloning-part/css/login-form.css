@@ -1,0 +1,48 @@
+.login-form {
+  font-size: 50px;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  margin-bottom: 50px;
+}
+
+.login-form__input {
+  width: 250px;
+  height: 60px;
+  font-family: "Hi Melody", cursive;
+  font-size: 50px;
+  color: white;
+  margin-left: 10px;
+  border: none;
+  border-bottom: 2px solid white;
+  background-color: rgba(255, 255, 255, 0);
+}
+
+.login-form__button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  margin-left: -10px;
+  font-size: 30px;
+  color: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  transition: all 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.login-form:hover .login-form__button {
+  opacity: 1;
+}
+
+.login-form__button:hover {
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.greeting {
+  font-size: 50px;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  margin-bottom: 50px;
+}

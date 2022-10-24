@@ -1,0 +1,42 @@
+#quote {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 1px 1px 3px black;
+}
+
+#quote span {
+  padding: 3px;
+}
+
+#quote span:first-child {
+  transform: translateY(20px);
+  transition: all 0.3s ease-in-out;
+}
+
+#quote span:last-child {
+  font-size: 15px;
+  font-weight: thin;
+  color: rgba(255, 255, 255, 0.7);
+  transform: translateY(-20px);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+#quote:hover span:first-child {
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+#quote:hover span:last-child {
+  opacity: 1;
+  transform: translateY(0px);
+}

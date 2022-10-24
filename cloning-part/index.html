@@ -9,26 +9,36 @@
   </head>
   <body>
     <h2 id="clock">00:00</h2>
-    <h2 id="weather">
-      <span>
+    <h2 class="weather">
+      <div class="weather__column">
         <img
-          id="weather-icon"
-          src=" http://openweathermap.org/img/wn/10d@2x.png"
+          class="weather-icon"
+          src="http://openweathermap.org/img/wn/10d@2x.png"
         />
-        Rain
-      </span>
-      <div class="weather-column">
-        <span><i class="fa-solid fa-location-dot fa-fw"></i>Seoul</span>
+        <span> Rain </span>
+      </div>
+      <div class="weather__column">
+        <div class="weather__location">
+          <i class="fa-solid fa-location-dot fa-fw"></i>
+          <span>Seoul</span>
+        </div>
         <div class="weather__temps">
-          <span class="weather__current-temp"
-            >17°
+          <div class="weather__current-temp">
+            <span>17°</span>
             <button class="weather__current-temp__button">
               <i class="fa-solid fa-caret-up"></i>
             </button>
-          </span>
-          <ul id="temp-list" class="">
-            <li><i class="fa-solid fa-temperature-arrow-up fa-fw"></i>24°</li>
-            <li><i class="fa-solid fa-temperature-arrow-down fa-fw"></i>5°</li>
+          </div>
+
+          <ul class="temp-list" class="">
+            <li>
+              <i class="fa-solid fa-temperature-arrow-up fa-fw"></i>
+              <span>24°</span>
+            </li>
+            <li>
+              <i class="fa-solid fa-temperature-arrow-down fa-fw"></i>
+              <span>5°</span>
+            </li>
           </ul>
         </div>
       </div>
